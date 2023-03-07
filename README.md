@@ -12,3 +12,5 @@ Le fichier epsilon_alg.py décrit ensuite l'algorithme epsilon.
 Le fichier verif_epsilon.py permet ensuite de vérifier cet algorithme, en utilisant les premières valeurs du développement en série de l'arctangente en zéro, pour obtenir une approximation de pi. 
 
 Enfin, le fichier extrapolation.py permet d'utiliser l'algorithme epsilon pour extrapoler les valeurs limites de E_0/N et E_1-E_0, dont les premiers termes sont obtenus à partir du calcul des énergies précédemment effectué.
+
+Le dossier Figures contient les figures détaillées dans le rapport, sur l'évolution de la convergence de l'algorithme epsilon dans le calcul des suites des énergies.
