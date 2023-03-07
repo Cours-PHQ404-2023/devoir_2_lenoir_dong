@@ -6,12 +6,12 @@ import numpy as np
 
 J=1
 
-f = open('calcul_energ_data.txt','w')
+f = open('calcul_energ_data.txt','w') #ouverture du fichier .txt en écriture
 
 def energ(N) : 
     H = ham(J,N)
 
-    eig_val = eigsh(H,k=N)[0]
+    eig_val = eigsh(H,k=N)[0] #calculs des valeurs propres
     #print(type(H))
     #print(eig_val)
     for k in range(len(eig_val)) : 
@@ -25,11 +25,11 @@ def energ(N) :
 
     eig_val = set(eig_val)
     min1 = sorted(eig_val)[0]
-    min2 = sorted(eig_val)[1]
+    min2 = sorted(eig_val)[1] #permet de ne garder que les deux valeurs propres les plus faibles
 
     return min1,min2
 
 for n in range(2,21) :  
     energies = energ(n)
-    f.write(str(n)+' : E_0 = '+str(energies[0])+' et E_1 = '+str(energies[1])+'\n')
+    f.write(str(n)+' : E_0 = '+str(energies[0])+' et E_1 = '+str(energies[1])+'\n') #on écrit dans le fichier
     
