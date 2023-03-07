@@ -4,21 +4,21 @@ import numpy as np
 def epsilon(liste_S_n) : 
     n = len(liste_S_n)
 
-    triangle = np.zeros((n+1,n+1))
+    triangle = np.zeros((n+1,n+1)) #on initialise le triangle de l'algorithme (la pointe sera en bas !!!)
 
     for k in range(n+1) : 
         for j in range(n+1) : 
             if k==0 :
-                triangle[k][j] = 0
+                triangle[k][j] = 0 #première ligne de zéro
             elif k==1:
                 if j<=n-1:
-                    triangle[k][j]=liste_S_n[j]
+                    triangle[k][j]=liste_S_n[j] #deuxième ligne avec les terme de la suite
             else :
                 if j<=n-k :
                     if triangle[k-1][j+1] - triangle[k-1][j] == 0 : 
-                        return "Erreur de division par zéro"
+                        return "Erreur de division par zéro" #cas particulier si il y a division par zéro
                     else : 
-                        triangle[k][j] = triangle[k-2][j+1] + 1/(triangle[k-1][j+1] - triangle[k-1][j])
+                        triangle[k][j] = triangle[k-2][j+1] + 1/(triangle[k-1][j+1] - triangle[k-1][j]) #on applique la formule de l'algorithme
     #print(triangle)
     return triangle[n][0]
 
